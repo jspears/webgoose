@@ -1,4 +1,4 @@
-var sf = require('../lib/server/security'), expect = require('expect'), model = require('./support/blogpost');
+var sf = require('../../lib/server/security'), expect = require('expect'), model = require('../support/blogpost');
 describe('security', function () {
 
     it('should create a function', function () {

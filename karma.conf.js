@@ -8,14 +8,14 @@ module.exports = function (config) {
         files: [
             //'tests.webpack.js' //just load this file
            // 'test/*-test.js',
-            /^(?!.*server-test\.js$).*-test\.js$/
+            'test/client/**/*-test.js'
         ],
         preprocessors: {
-            'test/*-test.js': ['webpack', 'sourcemap'] //preprocess with webpack and our sourcemap loader
+            'test/client/**/*-test.js': ['webpack', 'sourcemap'] //preprocess with webpack and our sourcemap loader
         },
 
         proxies: {
-            '/rest/mongoose/': 'http://localhost:3080/rest/mongoose/'
+            '/rest/mongoose/': 'http://localhost:3082/rest/mongoose/'
         },
         reporters: ['dots'], //report results in this format
 

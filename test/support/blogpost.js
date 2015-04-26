@@ -12,6 +12,7 @@ var CommentSchema = new Schema({
 
 var UserSchema = new Schema({
     username: {type: String, match: /^[a-z]+?$/},
+    factor:Number,
     friends: [{type: Schema.Types.ObjectId, ref: 'User'}]
 });
 var BlogPostSchema = new Schema({

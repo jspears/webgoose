@@ -180,8 +180,8 @@ in your server.js. Everything is available by default.
 
 pass the following options
  
-  |Key       | Type    |Description
-  +----------+---------+------------
+  | Key      |   Type  | Description |
+  | -------- | ------- | -----------
   | builtin  | boolean | false disables all the built in functions including findById
   | mquery   | boolean | false disables mquery operations.
   | populate | boolean | false disables population

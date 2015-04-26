@@ -1,6 +1,6 @@
-var mongoose = require('../lib/client/model');
+var mongoose = require('../../lib/client/model');
 
-var models = require('./support/blogpost');
+var models = require('../support/blogpost');
 var expect = require('expect');
 describe('model', function () {
     var connection;
@@ -16,9 +16,9 @@ describe('model', function () {
     var _id;
     var user, e1, e2, bp;
     before(function (done) {
-        user = new models.User({username: 'joe'});
-        e1 = new models.User({username: 'anna'});
-        e2 = new models.User({username: 'bobanna'});
+        user = new models.User({username: 'joe', factor:5});
+        e1 = new models.User({username: 'anna', factor:2});
+        e2 = new models.User({username: 'bobanna', factor:5});
 
         user.save(function (e, u) {
             e1.save(function (e, e1) {
@@ -38,6 +38,16 @@ describe('model', function () {
                     })
                 });
             });
+        });
+    });
+    it('should find one joe', function(){
+      return models.User.find().where({username:'joe'}).distinct({factor:5}).then(function(d){
+          expect(d.length).toBe(1);
+      });
+    });
+    it('should find distinct joe', function(){
+        return models.User.find().distinct({factor:5}).then(function(d){
+            expect(d.length).toBe(2);
         });
     });
     it('should save', function () {

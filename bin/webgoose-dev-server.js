@@ -3,7 +3,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var path = require('path');
-var DEF_PORT = 3080, DEF_MONGO = 'mongodb://localhost/react_mongoose', DEF_CONTEXT = '/rest/mongoose';
+var DEF_PORT = 3082, DEF_MONGO = 'mongodb://localhost/react_mongoose', DEF_CONTEXT = '/rest/mongoose';
 var args = process.argv.slice(2), port = DEF_PORT, mongo = DEF_MONGO, includes = [], context = DEF_CONTEXT, allowDropDatabase = false;
 
 while (args.length) {
