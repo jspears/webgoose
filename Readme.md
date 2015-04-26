@@ -180,12 +180,13 @@ in your server.js. Everything is available by default.
 
 pass the following options
  
-  |Key       | Type    |Description
-  +----------+---------+------------
-  | builtin  | boolean | false disables all the built in functions including findById
-  | mquery   | boolean | false disables mquery operations.
-  | populate | boolean | false disables population
-  | methods  | boolean | false disables instance method invocations
-  | statics  | boolean | false disables static method invocations
-  | models   | String  | a comma delimented list of allowed models (or an array).
+| Key      |   Type  | Description |
+| -------- | ------- | ----------- |
+| builtin  | boolean | false disables all the built in functions including findById |
+| mquery   | boolean | false disables mquery operations. |
+| populate | boolean | false disables population |
+| methods  | boolean | false disables instance method invocations |
+| statics  | boolean | false disables static method invocations |
+| models   | String  | a comma delimented list of allowed models (or an array). |
+  
   
