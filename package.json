@@ -6,9 +6,9 @@
   "tags": "mongoose rest webservices webpack",
   "scripts": {
     "start": "./bin/webgoose-dev-server.js test/support/blogpost.js ",
-    "karma": "mongod --dbpath ./db & ./bin/webgoose-dev-server.js test/support/blogpost.js & karma start --no-single-run --colors --auto-watch",
+    "karma": "mongod --dbpath ./db & ./bin/webgoose-dev-server.js --allow-drop-database test/support/blogpost.js & karma start --no-single-run --colors --auto-watch",
     "mocha": "mongod --dbpath ./db & mocha test/**/*-test.js",
-    "test": "mongod --dbpath ./db & ./bin/webgoose-dev-server.js test/support/blogpost.js & karma start",
+    "test": "mongod --dbpath ./db & ./bin/webgoose-dev-server.js --allow-drop-database test/support/blogpost.js & karma start",
     "karma-only":"karma start --no-single-run --colors --auto-watch",
     "webpack": "webpack --config ./webpack.config.js  -p",
     "prepublish": "webpack --config ./webpack.config.js -p"
