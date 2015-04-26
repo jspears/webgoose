@@ -1,0 +1,2 @@
+# webgoose
+Subschema for webgoose
