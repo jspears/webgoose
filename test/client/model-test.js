@@ -40,14 +40,24 @@ describe('model', function () {
             });
         });
     });
-    it('should find one joe', function(){
-      return models.User.find().where({username:'joe'}).distinct({factor:5}).then(function(d){
+    it('should find  joe', function(){
+      return models.User.find().where({username:'joe'}).then(function(d){
           expect(d.length).toBe(1);
       });
     });
-    it('should find distinct joe', function(){
-        return models.User.find().distinct({factor:5}).then(function(d){
+    it('should find distinct factors', function(){
+        return models.User.find().distinct('factor').then(function(d){
             expect(d.length).toBe(2);
+        });
+    });
+    it('should count users', function(){
+        return models.User.find().count().then(function(v){
+            expect(v).toBe(3);
+        });
+    });
+    it('should count users with conditions', function(){
+        return models.User.find().count({factor:5}).then(function(v){
+            expect(v).toBe(2);
         });
     });
     it('should save', function () {

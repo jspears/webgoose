@@ -23,6 +23,13 @@ Basic
   $ webgoose-dev-server ./path/to/your/model.js
 ```
 
+### Gotchas
+Do the mongoose connection in your server.js and client.js respectively not in the shared model.  If you do it in the
+model, than it gets a little tricky to  determine which path to use. If you really need to do it somewhere shared by 
+both there is a mongoose.isBrowser property that tells you if you are in the browser so you can connect with the 
+correct url.
+
+
 
 ### Example model/blogpost.js
 This is (or should be exactly the same as your mongoose, on the server

@@ -143,6 +143,42 @@ describe('security', function () {
                 });
                 expect(all('BlogPost', model.BlogPost, 'notAmethod')).toEqual(true);
             });
-        })
+        });
+    });
+    describe('arrays', function(){
+
+        describe('methods', function () {
+            it('methods when paths match true', function () {
+                var all = sf({
+                    methods: ['BlogPost.findCommentsLike'],
+                    builtin: false
+                    /*,
+                     populate: false,
+
+                     methods: false,
+                     conditions: false,
+                     options: false*/
+                });
+                expect(all('BlogPost', model.BlogPost, 'findCommentsLike')).toEqual(true);
+            });
+            it('methods when paths don not match false', function () {
+                var all = sf({
+                    methods: ['BlogPost.findCommentsLike'],
+                    builtin: false
+                    /*,
+                     populate: false,
+
+                     methods: false,
+                     conditions: false,
+                     options: false*/
+                });
+                expect(all('BlogPost', model.BlogPost, 'stuff')).toEqual(false);
+            });
+
+
+
+        });
+
     })
-})
+
+});
