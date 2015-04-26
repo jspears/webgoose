@@ -1,0 +1,45 @@
+{
+  "name": "webgoose",
+  "version": "0.1.0",
+  "description": "Browser access to mongoose modules and functions",
+  "main": "lib/client/model",
+  "tags": "mongoose rest webservices webpack",
+  "scripts": {
+    "start": "./bin/webgoose-dev-server.js test/support/blogpost.js ",
+    "karma": "mongod --dbpath ./db & ./bin/webgoose-dev-server.js test/support/blogpost.js & karma start --no-single-run --colors --auto-watch",
+    "mocha": "mongod --dbpath ./db & mocha test/*-test.js",
+    "test": "mongod --dbpath ./db & ./bin/webgoose-dev-server.js test/support/blogpost.js & karma start",
+    "karma-only":"karma start --no-single-run --colors --auto-watch",
+    "webpack": "webpack --config ./webpack.config.js  -p",
+    "prepublish": "webpack --config ./webpack.config.js -p"
+  },
+  "bin": {
+    "webgoose-dev-server": "./bin/webgoose-dev-server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "express": "^4.12.3",
+    "mongoose": "^4.0.1",
+    "body-parser": "^1.12.3"
+  },
+  "dependencies": {
+    "lodash": "^3.7.0"
+  },
+  "devDependencies": {
+    "amdefine": "^0.1.0",
+    "body-parser": "^1.12.3",
+    "expect": "^1.6.0",
+    "express": "^4.12.3",
+    "karma": "^0.12.31",
+    "karma-chrome-launcher": "^0.1.8",
+    "karma-cli": "0.0.4",
+    "karma-mocha": "^0.1.10",
+    "karma-sourcemap-loader": "^0.3.4",
+    "karma-spec-reporter": "0.0.19",
+    "karma-webpack": "^1.5.0",
+    "mocha": "^2.2.4",
+    "mongoose": "^4.0.2",
+    "webpack": "^1.8.7"
+  }
+}
